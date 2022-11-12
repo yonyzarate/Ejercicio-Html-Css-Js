@@ -3,4 +3,6 @@ body {
   width: 800px;
   margin: 0 auto;
   text-align: justify;
+  background-color: black;
+  color: yellow;
 }
