@@ -40,3 +40,29 @@ body {
   padding: 40px;
   text-align: justify;
 }
+.menu button {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    height: 100vh;
+    position: fixed;
+    padding: 20px 40px;
+    transform: translateX(-100%);
+    transition: 0.5s;
+  }
+  .content {
+    padding: 20px 40px;
+  }
+  .menu-activo {
+    transform: translateX(0);
+  }
+  .menu button {
+    display: block;
+    font-size: 20px;
+    background: none;
+    outline-color: transparent;
+    border: 0;
+    transform: translateX(180px);
+  }
+}
