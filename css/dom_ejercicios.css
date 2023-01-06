@@ -59,7 +59,7 @@ img {
   /* height: 100vh; */
   background-color: var(--second-modal-color);
   transition: transform 0.3s ease;
-  transform: translate(0, -100%);
+  transform: translate(0, 100%);
 }
 .panel.is-active {
   transform: translate(0, 0);
