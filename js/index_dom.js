@@ -1,3 +1,4 @@
+import scrollTopBottom from "./dom/boton_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import { digitalClock, alarm } from "./dom/reloj.js";
@@ -9,6 +10,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   digitalClock("#reloj", "#activar-reloj", "#desactivar-reloj");
   alarm("../assets/alarm.wav", "#activar-alarma", "#desactivar-alarma");
   countdown("countdown", "Mar 08, 2023 11:04:00", "Feliz cumpleaños");
+  scrollTopBottom(".scroll-top-btn");
 });
 
 d.addEventListener("keydown", (e) => {
