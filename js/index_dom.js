@@ -1,5 +1,6 @@
 import scrollTopBottom from "./dom/boton_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
+import userDiviceInfo from "./dom/detecion_dispositivos.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
 import responsiveTester from "./dom/prueba_reponsive.js";
@@ -27,6 +28,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     `<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4515.791527471732!2d-63.141268423940716!3d-17.870816419572265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDUyJzE3LjMiUyA2M8KwMDgnMjQuNCJX!5e0!3m2!1ses-419!2sbo!4v1679605946124!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
   );
   responsiveTester("responsive-tester");
+  userDiviceInfo("user-device");
 });
 
 d.addEventListener("keydown", (e) => {
