@@ -1,6 +1,7 @@
 import scrollTopBottom from "./dom/boton_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import networkStatus from "./dom/deteccion_red.js";
+import webCam from "./dom/deteccion_webcam.js";
 import userDiviceInfo from "./dom/detecion_dispositivos.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
@@ -30,6 +31,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   );
   responsiveTester("responsive-tester");
   userDiviceInfo("user-device");
+  webCam("webcam");
 });
 
 d.addEventListener("keydown", (e) => {
