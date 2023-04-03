@@ -1,5 +1,6 @@
 import scrollTopBottom from "./dom/boton_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
+import networkStatus from "./dom/deteccion_red.js";
 import userDiviceInfo from "./dom/detecion_dispositivos.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
@@ -36,3 +37,4 @@ d.addEventListener("keydown", (e) => {
   moveBall(e, ".ball", ".stage");
 });
 darkTheme(".dark-theme-btn", "dark-mode");
+networkStatus();
