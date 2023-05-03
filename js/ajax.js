@@ -76,7 +76,7 @@
       let res = await fetch("https://jsonplaceholder.typicode.com/user"),
         json = await res.json();
 
-      console.log(res, json);
+      // console.log(res, json);
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
       json.forEach((el) => {
@@ -86,12 +86,38 @@
       });
       $fetchAsync.appendChild($fragment);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       let message = err.statusText || "Ocurrió un error";
       $fetchAsync.innerHTML = `Error ${err.status}: ${message}`;
     } finally {
-      console.log("Esto se ejecutará indepentientemente del try... catch");
+      // console.log("Esto se ejecutará indepentientemente del try... catch");
     }
   }
   getData();
 })();
+// import axios from "axios";
+// *********** AJAX Libreria Axios
+// (() => {
+//   const $axios = document.getElementById("axios"),
+//     $fragment = document.createDocumentFragment();
+
+//   axios
+//     .get("https://jsonplaceholder.typicode.com/users")
+//     .then((res) => {
+//       console.log(res);
+//       let json = res.data;
+
+//       json.forEach((el) => {
+//         const $li = document.createElement("li");
+//         $li.innerHTML = `${el.name} -- ${el.email}-- ${el.phone}`;
+//         $fragment.appendChild($li);
+//       });
+//       $axios.appendChild($fragment);
+//     })
+//     .catch((err) => {
+//       console.log("Estamos en el catch", err);
+//     })
+//     .finally(() => {
+//       console.log("Esto se ejecutará independientemente del resultado Axios");
+//     });
+// })();
