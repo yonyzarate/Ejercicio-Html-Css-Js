@@ -39,6 +39,11 @@
       "nombre": "Saga",
       "constelacion": "Geminis",
       "id": 8
+    },
+    {
+      "nombre": "Shaka",
+      "constelacion": "virgos",
+      "id": 9
     }
   ],
   "dioses": [
