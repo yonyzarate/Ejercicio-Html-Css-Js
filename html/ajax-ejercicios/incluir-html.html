@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Yony Zarate Paco" />
+    <meta name="Description" content="Ejercicios de AJAX" />
+    <title>Incluir HMTL con AJAX</title>
+    <link rel="stylesheet" href="../../css/sitio-ajax.css" />
+    <script src="../../js/include-html.js"></script>
+  </head>
+  <body>
+    <div data-include="asset-html/heder.html"></div>
+    <main class="container"></main>
+    <div data-include="asset-html/footer.html"></div>
+
+    <script>
+      const d = document,
+        $main = d.querySelector("main");
+
+      const getHTML = (options) => {
+        let { url, success, error } = options;
+        const xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("readystatechange", (e) => {
+          if (xhr.readyState !== 4) return;
+
+          if (xhr.status >= 200 && xhr.status < 300) {
+            let html = xhr.responseText;
+
+            success(html);
+          } else {
+            let message = xhr.statusText || "Ocurrió un error";
+            error(`Error ${xhr.status}: ${message}`);
+          }
+        });
+        xhr.open("GET", url);
+        xhr.setRequestHeader("Content-Type", "text/html;charset=utf-8");
+        xhr.send();
+      };
+
+      d.addEventListener("DOMContentLoaded", (e) => {
+        getHTML({
+          url: "asset-html/home.html",
+          success: (html) => ($main.innerHTML = html),
+          error: (err) => ($main.innerHTML = `<h1>${err}</h1>`),
+        });
+      });
+      d.addEventListener("click", (e) => {
+        if (e.target.matches(".menu a")) {
+          e.preventDefault();
+          getHTML({
+            url: e.target.href,
+            success: (html) => ($main.innerHTML = html),
+            error: (err) => ($main.innerHTML = `<h1>${err}</h1>`),
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
