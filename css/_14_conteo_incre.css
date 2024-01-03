@@ -1,0 +1,44 @@
+/* *importar texto */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
+/* *Resetear el documuento de estilos */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* *Estilo del cuerpo */
+body {
+  background-color: #8e44ad;
+  color: white;
+  font-family: "Roboto Mono", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* *Estilo de la caja .counter-container */
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 50px;
+}
+.counter {
+  font-size: 60px;
+  margin-top: 10px;
+}
+@media (max-width: 580px) {
+  body {
+    flex-direction: column;
+  }
+}
